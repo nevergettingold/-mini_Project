@@ -8,11 +8,9 @@ import './css/index.css';
 import App from './shared/App';
 
 ReactDOM.render(
-  <Provider>
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
-  </Provider>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
