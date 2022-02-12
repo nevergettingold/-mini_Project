@@ -1,43 +1,27 @@
 import React from "react";
-
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import CardList from "../components/CardList";
+import CardSwiper from "../components/CardSwiper";
+
+import { actionCreators as postActions } from "../redux/modules/post";
 
 const Home = (props) => {
+  const post_list = useSelector((state) => state.post.post_list);
+  console.log(post_list);
+
   return (
     <Container>
-      <div>
-        <h1>D질래?</h1>
-        <h1>Header</h1>
-        <h1>Banner</h1>
-        <img
-          src="https://cdn.wallpapersafari.com/71/63/40yW8c.jpg"
-          alt=""
-          width="600px"
-        />
-      </div>
-      <Main>
-        <p>이번 주의 D지게 공감</p>
-        <Card>
-          <img
-            src="https://www.fonewalls.com/wp-content/uploads/1536x2048-Background-HD-Wallpaper-002-300x400.jpg"
-            alt=""
-          />
-        </Card>
-      </Main>
+      <h2>
+        이번 주의 <span style={{ fontSize: "30px" }}>BEST</span> 관심
+      </h2>
+      <CardSwiper post_list={post_list} />
+      <h2 style={{ margin: "30px 0" }}>다른 분들의 실시간은?</h2>
+      <CardList post_list={post_list} />
     </Container>
   );
 };
 
-const Container = styled.div`
-  min-width: 1280px;
-  margin: 0 auto;
-`;
-
-const Main = styled.div`
-  /* width: 1280px; */
-  /* display: flex; */
-`;
-
-const Card = styled.div``;
+const Container = styled.div``;
 
 export default Home;

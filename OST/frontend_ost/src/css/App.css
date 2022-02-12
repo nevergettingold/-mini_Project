@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -265,4 +265,14 @@ button {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  padding: 0.2rem 1rem;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+}
+input {
+  padding: 0.2rem 1rem;
+  border: 1px solid #dddddd;
 }
